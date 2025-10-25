@@ -17,7 +17,6 @@ const standardTicket = inputKm * priceKm;
 const under18 = standardTicket * 20 / 100;
 const over65 = standardTicket * 40 / 100;
 let ticketPrice = null; 
-let message = null;
 
 console.log(age, inputKm, standardTicket)
 
@@ -27,11 +26,15 @@ if (age < 18){
     console.log(ticketPrice)
 } else if (age > 65){
     ticketPrice = (standardTicket - over65).toFixed(2)
+    console.log(ticketPrice)
 } else{
     ticketPrice = standardTicket.toFixed(2)
+    console.log(ticketPrice)
 }
-message = `Il costo del tuo viaggio di ${inputKm}km sarà di euro ${ticketPrice}`
+
+const message = `Il costo del tuo viaggio di ${inputKm}km sarà di euro ${ticketPrice}`
 console.log(message)
 
 // output
-alert(message)
+document.getElementById("result").innerHTML = message;
+//alert(message)
